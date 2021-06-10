@@ -1,6 +1,6 @@
 # Rick and Morty Get Schwifty App
 
-[For deployed version, click me!!!](https://jlentz17.github.io/code-quiz/)
+[For deployed version, click me!!!](https://jlentz17.github.io/rick-and-morty-app/)
 
 In the seventh week of bootcamp, we were given the assignment of creating a project with JavaScript and WEb API's.
 
