@@ -4,11 +4,22 @@ var characterButton = document.getElementById("characterButton");
 
 var characterButton = document.getElementById("characterButton");
 var modal = document.querySelector(".modal");
-// don't know how to do this
+
+var deleteBtn = document.querySelector(".deleteBtn");
 $("button").on("click", function(){
     console.log(modal)
     modal.classList.add("is-active")
 });
+
+
+
+// don't know how to do this
+$(".deleteBtn").on("click", function(){
+    modal.classList.remove("is-active")
+});
+
+
+
 
 
 
