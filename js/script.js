@@ -11,27 +11,28 @@ var characterImage = document.querySelector(".characterImage");
 var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
 
-// Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
-    fetch(endPoint)
-    .then((response) => {
-        return response.json()
-    }).then((data) => {
-        characterObj = data.results
-    })
-    .catch((error) => {
-        console.log("rejected", error)
-    })
-
-
 //generates a random integer between specified minimum and maximum    
 var getRandomInt = function(min,max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
+// Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector    
+var randomPage = getRandomInt(1, 34)
+        fetch(endPoint + "?page=" + randomPage)
+        .then((response) => {
+            return response.json()
+        }).then((data) => {
+            characterObj = data.results;
+        })
+        .catch((error) => {
+            console.log("rejected", error)
+        })
+
 
 //Generates random character from character object    
 var randomCharacterSelector = function() {
     var i = getRandomInt(0,characterObj.length);
     var character = characterObj[i];
+    console.log(characterObj);
     return character;
 }
 
