@@ -8,6 +8,7 @@ var endPoint = `https://rickandmortyapi.com/api/character`;
 var characterName = document.querySelector(".characterName");
 var characterSpecies = document.querySelector(".characterSpecies");
 var characterImage = document.querySelector(".characterImage");
+var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
 
 // Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
@@ -44,6 +45,7 @@ var createCharacterCard = function(input) {
     //create text for name of species
     characterSpecies.textContent = "Species: " + input.species;
     
+    characterOrigin.textContent = "Origin: " + input.origin.name;
     //create image element for character and append to modal card body
     characterImage.setAttribute("src", input.image);
     modalCardBody.appendChild(characterImage);
@@ -51,8 +53,8 @@ var createCharacterCard = function(input) {
     modal.classList.add("is-active");
 }
 
-
-$("button").on("click", function(){
+//Get Schwifty button click function to show random character and traits/picture
+$("#characterButton").on("click", function(){
     var character = randomCharacterSelector();
     createCharacterCard(character);
 });
