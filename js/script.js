@@ -24,17 +24,17 @@ for (var i = 0; i < 20; i++){
         return response.json();
     }).then(function(data) {
         var character = data.results[i]
-    return character;
-})
-.catch(function(error) {
-    console.log("rejected", error)
-})
+        return character;
+    })
+    .catch(function(error) {
+        console.log("rejected", error)
+    })
 
+    function addRickAndMortyChar(character) {
+        modalCardBody.textContent = data.results[i];
+        console.log(character)
+    }
 
-function addRickAndMortyChar(character) {
-    modalCardBody.textContent = data.results[i];
-    console.log(character)
-}
 // console.log(endPoint)
 
 
