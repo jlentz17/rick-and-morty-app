@@ -4,41 +4,60 @@ var characterButton = document.getElementById("characterButton");
 var modal = document.querySelector(".modal");
 
 var deleteBtn = document.querySelector(".deleteBtn");
-
-var endPoint = `https://rickandmortyapi.com/api/character`
-
+var endPoint = `https://rickandmortyapi.com/api/character`;
 var characterName = document.querySelector(".characterName");
-var characterEpisodes = document.querySelector(".characterEpsisodes");
-var characterLocation = document.querySelector(".characterLocation");
-
+var characterSpecies = document.querySelector(".characterSpecies");
+var characterImage = document.querySelector(".characterImage");
+var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
 
-
-// I can't get the data to display on the screen.. the class is modal-card-body
-
-    fetch(endPoint)
-    // console.log(character);
-    .then(function(response) {
-        // console.log("resolved", response)
-        return response.json();
-    }).then(function(data) {
-        for (var i = 0; i < 20; i++) {
-        character = data.results[i];
-        console.log(character)
-        return character;
-    }})
-    .catch(function(error) {
-        console.log("rejected", error)
-    })
-
-// console.log(endPoint)
+//generates a random integer between specified minimum and maximum    
+var getRandomInt = function(min,max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+// Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector    
+var randomPage = getRandomInt(1, 34)
+        fetch(endPoint + "?page=" + randomPage)
+        .then((response) => {
+            return response.json()
+        }).then((data) => {
+            characterObj = data.results;
+        })
+        .catch((error) => {
+            console.log("rejected", error)
+        })
 
 
+//Generates random character from character object    
+var randomCharacterSelector = function() {
+    var i = getRandomInt(0,characterObj.length);
+    var character = characterObj[i];
+    console.log(characterObj);
+    return character;
+}
 
-$("button").on("click", function(){
-    modalCardBody.textContent = character.name;
-    console.log(character)
-    modal.classList.add("is-active")
+
+//Generates character card when called in button
+var createCharacterCard = function(input) {
+    
+    //create text for name of character
+    characterName.textContent = "Name: " + input.name;
+    
+    //create text for name of species
+    characterSpecies.textContent = "Species: " + input.species;
+    
+    characterOrigin.textContent = "Origin: " + input.origin.name;
+    //create image element for character and append to modal card body
+    characterImage.setAttribute("src", input.image);
+    modalCardBody.appendChild(characterImage);
+
+    modal.classList.add("is-active");
+}
+
+//Get Schwifty button click function to show random character and traits/picture
+$("#characterButton").on("click", function(){
+    var character = randomCharacterSelector();
+    createCharacterCard(character);
 });
 
 
