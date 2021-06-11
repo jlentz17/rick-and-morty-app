@@ -5,7 +5,7 @@
 In the seventh week of bootcamp, we were given the assignment of creating a project with JavaScript and WEb API's.
 
 
-![Image of Rick and Marty App](./codeQuizScreenshot.png/)
+![Image of Rick and Marty App](./rickAndMortyProjectScreenshot.png/)
 
 # Description 
 
@@ -32,6 +32,11 @@ THEN I can save my card and see it in a gallery in saved storage
 * [CSS 3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [HTML 5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 * [Markdown](https://markdownguide.org/cheat-sheet/)
+* [Bulma]()
+* [JQuery]()
+* [Font Awesome]()
+* [Rick and Morty Web API]()
+* [Lorem Ricksum Web API]()
 
 
 ## Contributors
