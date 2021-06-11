@@ -19,11 +19,13 @@ SO THAT I can create a gallery of favorite character pictures and quotes.
 
 GIVEN I am searching for Rick and Morty info
 WHEN I press the Search button
-THEN I am presented with multiple characters and quotes in cards
-WHEN I press the play sound button
-THEN I am presented with a soundclip
-WHEN I push Save Button
-THEN I can save my card and see it in a gallery in saved storage
+THEN I am presented with a random character card with name, origin, species, and a picture and asked to save or next
+WHEN I press the save button
+THEN the character card is saved into local storage for the Gallery
+WHEN I press the cancel button
+THEN it exits the modal
+WHEN I press the Gallery button
+Then the gallery of stored character cards is shown with the cards side by side
 
 ## Built With
 
@@ -32,6 +34,11 @@ THEN I can save my card and see it in a gallery in saved storage
 * [CSS 3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [HTML 5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 * [Markdown](https://markdownguide.org/cheat-sheet/)
+* [Bulma](https://bulma.io/)
+* [JQuery](https://code.jquery.com/)
+* [Font Awesome](https://fontawesome.com/)
+* [Rick and Morty Web API](https://rickandmortyapi.com/documentation)
+* [Lorem Ricksum Web API](http://loremricksum.com/documentation/)
 
 
 ## Contributors
