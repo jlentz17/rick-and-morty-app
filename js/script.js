@@ -16,31 +16,28 @@ var modalCardBody = document.querySelector(".modal-card-body");
 
 // I can't get the data to display on the screen.. the class is modal-card-body
 
-for (var i = 0; i < 20; i++){
     fetch(endPoint)
     // console.log(character);
     .then(function(response) {
         // console.log("resolved", response)
         return response.json();
     }).then(function(data) {
-        var character = data.results[i]
+        for (var i = 0; i < 20; i++) {
+        character = data.results[i];
+        console.log(character)
         return character;
-    })
+    }})
     .catch(function(error) {
         console.log("rejected", error)
     })
-
-    function addRickAndMortyChar(character) {
-        modalCardBody.textContent = data.results[i];
-        console.log(character)
-    }
 
 // console.log(endPoint)
 
 
 
 $("button").on("click", function(){
-    console.log(modal)
+    modalCardBody.textContent = character.name;
+    console.log(character)
     modal.classList.add("is-active")
 });
 
@@ -50,7 +47,6 @@ $("button").on("click", function(){
 $(".deleteBtn").on("click", function(){
     modal.classList.remove("is-active")
 });
-};
 
 
 
