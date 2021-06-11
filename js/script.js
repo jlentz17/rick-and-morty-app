@@ -38,10 +38,6 @@ var randomCharacterSelector = function() {
     return character;
 }
 
-function play() {
-    var audio = document.getElementById("audio");
-    audio.play();
-  }
 
 
 //Generates character card when called in button
@@ -57,7 +53,7 @@ var createCharacterCard = function(input) {
     //create image element for character and append to modal card body
     characterImage.setAttribute("src", input.image);
     modalCardBody.appendChild(characterImage);
-
+    
     modal.classList.add("is-active");
 }
 
@@ -73,11 +69,17 @@ $(".deleteBtn").on("click", function(){
     modal.classList.remove("is-active")
 });
 
-// $("#soundClipButton").on("click", function(play);
-//     function(play) {
-//         var audio = document.getElementById("audio");
-//         audio.play();
-// })
+$("#soundClipButton").on("click", function(play){
+    function play(){
+        var audio = new Audio("/im-mr.mp3");
+        audio.play();
+        console.log(audio.play())
+    }
+})
+function play() {
+    var audio = document.getElementById("audio");
+    audio.play();
+  }
 
 
 
