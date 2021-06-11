@@ -4,22 +4,15 @@ var characterButton = document.getElementById("characterButton");
 var modal = document.querySelector(".modal");
 
 var deleteBtn = document.querySelector(".deleteBtn");
-
-var endPoint = `https://rickandmortyapi.com/api/character`
-
+var endPoint = `https://rickandmortyapi.com/api/character`;
 var characterName = document.querySelector(".characterName");
-console.log(characterName);
-var characterEpisodes = document.querySelector(".characterEpsisodes");
-var characterLocation = document.querySelector(".characterLocation");
-
+var characterSpecies = document.querySelector(".characterSpecies");
+var characterImage = document.querySelector(".characterImage");
 var modalCardBody = document.querySelector(".modal-card-body");
 
-// I can't get the data to display on the screen.. the class is modal-card-body
-
+// Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
     fetch(endPoint)
-    // console.log(character);
     .then((response) => {
-        // console.log("resolved", response)
         return response.json()
     }).then((data) => {
         characterObj = data.results
@@ -28,11 +21,13 @@ var modalCardBody = document.querySelector(".modal-card-body");
         console.log("rejected", error)
     })
 
+
+//generates a random integer between specified minimum and maximum    
 var getRandomInt = function(min,max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
-    
+//Generates random character from character object    
 var randomCharacterSelector = function() {
     var i = getRandomInt(0,characterObj.length);
     var character = characterObj[i];
@@ -40,12 +35,26 @@ var randomCharacterSelector = function() {
 }
 
 
+//Generates character card when called in button
+var createCharacterCard = function(input) {
+    
+    //create text for name of character
+    characterName.textContent = "Name: " + input.name;
+    
+    //create text for name of species
+    characterSpecies.textContent = "Species: " + input.species;
+    
+    //create image element for character and append to modal card body
+    characterImage.setAttribute("src", input.image);
+    modalCardBody.appendChild(characterImage);
+
+    modal.classList.add("is-active");
+}
 
 
 $("button").on("click", function(){
     var character = randomCharacterSelector();
-    modalCardBody.textContent = character.name;
-    modal.classList.add("is-active")
+    createCharacterCard(character);
 });
 
 
