@@ -8,7 +8,7 @@ var characterSpecies = document.querySelector(".characterSpecies");
 var characterImage = document.querySelector(".characterImage");
 var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
-
+var charData = {};
 //generates a random integer between specified minimum and maximum
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -30,7 +30,6 @@ fetch(endPoint + "?page=" + randomPage)
 var randomCharacterSelector = function () {
   var i = getRandomInt(0, characterObj.length);
   var character = characterObj[i];
-  console.log(characterObj);
   return character;
 };
 
@@ -48,26 +47,27 @@ var createCharacterCard = function (input) {
   modalCardBody.appendChild(characterImage);
 
   modal.classList.add("is-active");
-
-  var saveData = createCharDataObj(input);
 };
-function play() {
-  var audio = document.getElementById("audio");
-  audio.play();
-}
+
 var createCharDataObj = function (input) {
     var charDataObj = {
         name: input.name,
         species: input.species,
-        origin: input.origin,
+        origin: input.origin.name,
         image: input.image
     }
     return charDataObj;
 }
 
-var saveToGallery = function () {
-    localStorage.setItem("saveData", JSON.stringify(saveData)
+function play() {
+  var audio = document.getElementById("audio");
+  audio.play();
+}
 
+
+var saveToGallery = function () {
+    localStorage.setItem("charData", JSON.stringify(charData)
+    
     )};
 
 $("#saveRicks").on("click", function(){
@@ -77,7 +77,9 @@ $("#saveRicks").on("click", function(){
 //Get Schwifty button click function to show random character and traits/picture
 $("#characterButton").on("click", function () {
   var character = randomCharacterSelector();
+  charData = createCharDataObj(character);
   createCharacterCard(character);
+  console.log(charData);
 });
 
 // don't know how to do this- nevermind!!!
