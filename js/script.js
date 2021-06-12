@@ -36,24 +36,24 @@ var randomCharacterSelector = function () {
 
 //Generates character card when called in button
 var createCharacterCard = function (input) {
-  //create text for name of character
-  characterName.textContent = "Name: " + input.name;
-
-  //create text for name of species
-  characterSpecies.textContent = "Species: " + input.species;
-
-  characterOrigin.textContent = "Origin: " + input.origin.name;
-  //create image element for character and append to modal card body
-  characterImage.setAttribute("src", input.image);
-  modalCardBody.appendChild(characterImage);
-
-  modal.classList.add("is-active");
-
-  var saveData = createCharDataObj(input);
+    //create text for name of character
+    characterName.textContent = "Name: " + input.name;
+    
+    //create text for name of species
+    characterSpecies.textContent = "Species: " + input.species;
+    
+    characterOrigin.textContent = "Origin: " + input.origin.name;
+    //create image element for character and append to modal card body
+    characterImage.setAttribute("src", input.image);
+    modalCardBody.appendChild(characterImage);
+    
+    modal.classList.add("is-active");
+    
+    var saveData = createCharDataObj(input);
 };
 function play() {
-  var audio = document.getElementById("audio");
-  audio.play();
+    var audio = document.getElementById("audio");
+    audio.play();
 }
 var createCharDataObj = function (input) {
     var charDataObj = {
@@ -65,13 +65,11 @@ var createCharDataObj = function (input) {
     return charDataObj;
 }
 
-var saveToGallery = function () {
-    localStorage.setItem("saveData", JSON.stringify(saveData)
 
-    )};
 
 $("#saveRicks").on("click", function(){
-      saveToGallery();
+    localStorage.setItem("saveData", saveData)
+      saveToGallery(saveData);
 })
 
 //Get Schwifty button click function to show random character and traits/picture
