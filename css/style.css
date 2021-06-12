@@ -28,3 +28,31 @@ html {
     overflow-y: auto;
  }
  
+
+ .firstBtn {
+  color: #fff;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
+.social__item {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+.social__item {
+  cursor: pointer;
+}
+.neonBtn:hover {
+  border-color: #c64eca;
+  box-shadow: 0px 0px 20px #dd22c4;
+  color: #4221bb;
+}

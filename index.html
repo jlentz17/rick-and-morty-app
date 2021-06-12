@@ -16,16 +16,23 @@
 
 <body>
     <div class="buttons are-large">
-        <button class="button is-success is-hover is rounded" id="characterButton">Get Schwifty!</button>
+        <div class="firstBtn">
+        <button class="button is-success is-hover is rounded social_item neonBtn" id="characterButton">Get Schwifty!</button>
 
         <button class="button is-danger" id="galleryButton">Gallery of Ricks</button>
 
-        <button class="button is-primary" id="soundClipButton">OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
-        </button>
+        <button class="button is-primary" id="soundClipButton" onclick="play()">
+            OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
+            <!-- <input type="button" class= "button is-hover is-medium" value="PLAY" onclick="play"> -->
+
+            <audio id="audio" src="./im-mr.mp3">
+                <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+    </div>
     </div>
 
     <div class="modal">
-        
+
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">

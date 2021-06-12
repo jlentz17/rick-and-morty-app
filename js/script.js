@@ -11,6 +11,8 @@ var characterImage = document.querySelector(".characterImage");
 var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
 
+var soundClipButton = document.querySelector("#soundClipButton");
+
 //generates a random integer between specified minimum and maximum    
 var getRandomInt = function(min,max) {
     return Math.floor(Math.random() * (max - min) ) + min;
@@ -37,6 +39,7 @@ var randomCharacterSelector = function() {
 }
 
 
+
 //Generates character card when called in button
 var createCharacterCard = function(input) {
     
@@ -50,7 +53,7 @@ var createCharacterCard = function(input) {
     //create image element for character and append to modal card body
     characterImage.setAttribute("src", input.image);
     modalCardBody.appendChild(characterImage);
-
+    
     modal.classList.add("is-active");
 }
 
@@ -61,15 +64,22 @@ $("#characterButton").on("click", function(){
 });
 
 
-
 // don't know how to do this- nevermind!!!
 $(".deleteBtn").on("click", function(){
     modal.classList.remove("is-active")
 });
 
-
-
-
+$("#soundClipButton").on("click", function(play){
+    function play(){
+        var audio = new Audio("/im-mr.mp3");
+        audio.play();
+        console.log(audio.play())
+    }
+})
+function play() {
+    var audio = document.getElementById("audio");
+    audio.play();
+  }
 
 
 
