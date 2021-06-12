@@ -11,7 +11,8 @@ In the seventh week of bootcamp, we were given the assignment of creating a proj
 
 ## User Story
 
-User Story: AS A Rick and Morty fan
+User Story:
+AS A Rick and Morty fan
 I WANT to randomly generate a character with a picture and a quote and include a sound button 
 SO THAT I can create a gallery of favorite character pictures and quotes.
 
