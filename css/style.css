@@ -11,6 +11,19 @@ html {
   align-items: flex-start;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* .container {
+  border: 2px solid black;
+} */
+
+
 /* #characterButton {
     flex-direction: column;
     align-items: center;
