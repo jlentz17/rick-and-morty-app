@@ -11,6 +11,8 @@ var modalCardBody = document.querySelector(".modal-card-body");
 var charData = {};
 var charDataArr = [];
 var savedData = [];
+
+var body = document.body;
 //generates a random integer between specified minimum and maximum
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -47,8 +49,6 @@ var createCharacterCard = function (input) {
   //create image element for character and append to modal card body
   characterImage.setAttribute("src", input.image);
   modalCardBody.appendChild(characterImage);
-
- 
 };
 
 var createCharDataObj = function (input) {
@@ -84,8 +84,31 @@ var loadFromGallery = function () {
   // loop through savedData array
   for (var i = 0; i < savedData.length; i++) {
     // pass each character object into the `createTaskEl()` function
-    createCharacterCard(savedData[i]);
-    console.log(savedData[i]);
+    var containerEl = document.createElement("section")
+    containerEl.classList.add("container")
+
+    body.appendChild(containerEl);
+
+    var characterNameEl = document.createElement("h2")
+    characterNameEl.classList.add("savedCharacterName")
+    characterNameEl.textContent = savedData[i].name
+
+    var characterSpeciesEl = document.createElement("h2")
+    characterSpeciesEl.classList.add("savedCharacterSpecies")
+    characterSpeciesEl.textContent = savedData[i].species
+
+    var characterOriginEl = document.createElement("h2")
+    characterOriginEl.classList.add("savedOriginEl")
+    characterOriginEl.textContent = savedData[i].origin.name
+
+    var characterImageEl = document.createElement("img")
+    characterImageEl.classList.add("savedCharacterImage")
+    characterImageEl.setAttribute("src", savedData[i].image)
+
+    containerEl.appendChild(characterNameEl)
+    containerEl.appendChild(characterSpeciesEl)
+    containerEl.appendChild(characterOriginEl)
+    containerEl.appendChild(characterImageEl)
   }
 };
 
@@ -115,5 +138,5 @@ $("#soundClipButton").on("click", function (play) {
 });
 
 $("#galleryButton").on("click", function () {
-    loadFromGallery();
+  loadFromGallery();
 });
