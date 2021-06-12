@@ -11,10 +11,10 @@ html {
   align-items: flex-start;
 }
 
-#characterButton {
+/* #characterButton {
     flex-direction: column;
     align-items: center;
-}
+} */
 
 /* working on this */
 .modal {

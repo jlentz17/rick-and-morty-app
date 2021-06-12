@@ -9,6 +9,8 @@ var characterImage = document.querySelector(".characterImage");
 var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
 var charData = {};
+var charDataArr = [];
+var savedData = [];
 //generates a random integer between specified minimum and maximum
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -50,29 +52,47 @@ var createCharacterCard = function (input) {
 };
 
 var createCharDataObj = function (input) {
-    var charDataObj = {
-        name: input.name,
-        species: input.species,
-        origin: input.origin.name,
-        image: input.image
-    }
-    return charDataObj;
-}
+  var charDataObj = {
+    name: input.name,
+    species: input.species,
+    origin: input.origin.name,
+    image: input.image,
+  };
+  return charDataObj;
+};
 
 function play() {
   var audio = document.getElementById("audio");
   audio.play();
 }
 
-
 var saveToGallery = function () {
-    localStorage.setItem("charData", JSON.stringify(charData)
-    
-    )};
+  charDataArr.push(charData);
+  localStorage.setItem("charDataArr", JSON.stringify(charDataArr));
+};
 
-$("#saveRicks").on("click", function(){
-      saveToGallery();
-})
+var loadFromGallery = function () {
+  savedData = localStorage.getItem("charDataArr");
+  // if there are no tasks, set tasks to an empty array and return out of the function
+  if (!savedData) {
+    return false;
+  }
+  console.log("Saved data found!");
+  // else, load up saved tasks
+
+  // parse into array of objects
+  savedData = JSON.parse(savedData);
+
+  // loop through savedTasks array
+  for (var i = 0; i < savedData.length; i++) {
+    // pass each task object into the `createTaskEl()` function
+    createSavedDataEl(savedData[i]);
+  }
+};
+
+$("#saveRicks").on("click", function () {
+  saveToGallery();
+});
 
 //Get Schwifty button click function to show random character and traits/picture
 $("#characterButton").on("click", function () {
@@ -97,6 +117,7 @@ $("#soundClipButton").on("click", function (play) {
 
 $("#galleryButton").on("click", function () {
   modal.classList.add("is-active");
+  loadFromGallery();
 });
 
 // function getSchwifty(data) {
