@@ -8,7 +8,7 @@ var characterSpecies = document.querySelector(".characterSpecies");
 var characterImage = document.querySelector(".characterImage");
 var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
-
+var charData = {};
 //generates a random integer between specified minimum and maximum
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -30,52 +30,56 @@ fetch(endPoint + "?page=" + randomPage)
 var randomCharacterSelector = function () {
   var i = getRandomInt(0, characterObj.length);
   var character = characterObj[i];
-  console.log(characterObj);
   return character;
 };
 
 //Generates character card when called in button
 var createCharacterCard = function (input) {
-    //create text for name of character
-    characterName.textContent = "Name: " + input.name;
-    
-    //create text for name of species
-    characterSpecies.textContent = "Species: " + input.species;
-    
-    characterOrigin.textContent = "Origin: " + input.origin.name;
-    //create image element for character and append to modal card body
-    characterImage.setAttribute("src", input.image);
-    modalCardBody.appendChild(characterImage);
-    
-    modal.classList.add("is-active");
-    
-    var saveData = createCharDataObj(input);
+  //create text for name of character
+  characterName.textContent = "Name: " + input.name;
+
+  //create text for name of species
+  characterSpecies.textContent = "Species: " + input.species;
+
+  characterOrigin.textContent = "Origin: " + input.origin.name;
+  //create image element for character and append to modal card body
+  characterImage.setAttribute("src", input.image);
+  modalCardBody.appendChild(characterImage);
+
+  modal.classList.add("is-active");
 };
-function play() {
-    var audio = document.getElementById("audio");
-    audio.play();
-}
+
 var createCharDataObj = function (input) {
     var charDataObj = {
         name: input.name,
         species: input.species,
-        origin: input.origin,
+        origin: input.origin.name,
         image: input.image
     }
     return charDataObj;
 }
 
+function play() {
+  var audio = document.getElementById("audio");
+  audio.play();
+}
 
+
+var saveToGallery = function () {
+    localStorage.setItem("charData", JSON.stringify(charData)
+    
+    )};
 
 $("#saveRicks").on("click", function(){
-    localStorage.setItem("saveData", saveData)
-      saveToGallery(saveData);
+      saveToGallery();
 })
 
 //Get Schwifty button click function to show random character and traits/picture
 $("#characterButton").on("click", function () {
   var character = randomCharacterSelector();
+  charData = createCharDataObj(character);
   createCharacterCard(character);
+  console.log(charData);
 });
 
 // don't know how to do this- nevermind!!!
