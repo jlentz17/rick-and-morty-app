@@ -48,7 +48,7 @@ var createCharacterCard = function (input) {
   characterImage.setAttribute("src", input.image);
   modalCardBody.appendChild(characterImage);
 
-  modal.classList.add("is-active");
+ 
 };
 
 var createCharDataObj = function (input) {
@@ -73,20 +73,19 @@ var saveToGallery = function () {
 
 var loadFromGallery = function () {
   savedData = localStorage.getItem("charDataArr");
-  // if there are no tasks, set tasks to an empty array and return out of the function
+  // if there are no characters, set savedData to an empty array and return out of the function
   if (!savedData) {
     return false;
   }
-  console.log("Saved data found!");
-  // else, load up saved tasks
 
   // parse into array of objects
   savedData = JSON.parse(savedData);
 
-  // loop through savedTasks array
+  // loop through savedData array
   for (var i = 0; i < savedData.length; i++) {
-    // pass each task object into the `createTaskEl()` function
-    createSavedDataEl(savedData[i]);
+    // pass each character object into the `createTaskEl()` function
+    createCharacterCard(savedData[i]);
+    console.log(savedData[i]);
   }
 };
 
@@ -99,7 +98,7 @@ $("#characterButton").on("click", function () {
   var character = randomCharacterSelector();
   charData = createCharDataObj(character);
   createCharacterCard(character);
-  console.log(charData);
+  modal.classList.add("is-active");
 });
 
 // don't know how to do this- nevermind!!!
@@ -116,17 +115,5 @@ $("#soundClipButton").on("click", function (play) {
 });
 
 $("#galleryButton").on("click", function () {
-  modal.classList.add("is-active");
-  loadFromGallery();
+    loadFromGallery();
 });
-
-// function getSchwifty(data) {
-
-//     var currentrickAndMortyCharacter;
-//     fetch(endPoint)
-//     console.log(data)
-//         .then((info)=> data.json())
-
-// }
-
-// getSchwifty():
