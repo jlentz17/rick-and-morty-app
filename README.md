@@ -5,7 +5,7 @@
 In the seventh week of bootcamp, we were given the assignment of creating a project with JavaScript and WEb API's.
 
 
-![Image of Rick and Morty App](./css/rickAndMorty.png)
+![Image of Rick and Morty App](./css/rickAndMortyProjectScreenshot.png)
 
 # Description 
 
