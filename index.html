@@ -21,9 +21,9 @@
     <button class="firstBtn button is-success is-size-2 is-hover is rounded social_item neonBtn"
         id="characterButton">Get Schwifty!</button>
 
-    <button class="button is-danger is-size-2 is-full-width" id="galleryButton">Gallery of Ricks</button>
+    <button class="secondButton button is-danger is-size-2 is-full-width" id="galleryButton">Gallery of Ricks</button>
 
-    <button class="button is-primary is-size-2" id="soundClipButton" onclick="play()">
+    <button class=" thirdButton button is-primary is-size-2" id="soundClipButton" onclick="play()">
         OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
 
         <audio id="audio" src="./im-mr.mp3">
@@ -42,10 +42,10 @@
             <section class="modal-card-body">
                 <!-- Content ... -->
                 <div class="col-12 col-md-8">
-                    <h2 class="characterName"></h2>
-                    <h2 class="characterSpecies"></h2>
-                    <h2 class="characterOrigin"></h2>
-                    <img class="characterImage">
+                    <h2 class=" col-3 characterName"></h2>
+                    <h2 class="col-3 characterSpecies"></h2>
+                    <h2 class="col-3 characterOrigin"></h2>
+                    <img class=" col-3 characterImage">
                 </div>
             </section>
             <footer class="modal-card-foot">
@@ -54,15 +54,15 @@
             </footer>
         </div>
 
-    </div>
+    </div class="row">
     <section class="container">
-        <span>
+        <span class="col-3">
             <h2 class="savedCharacterName"></h2>
         </span>
-        <span>
+        <span class="col-3">
             <h2 class="savedCharacterSpecies"></h2>
         </span>
-        <span>
+        <span class="col-3">
             <h2 class="savedCharacterOrigin"></h2>
             <img class="savedCharacterImage">
         </span>
