@@ -68,6 +68,10 @@ function play() {
   audio.play();
 }
 
+// function play() {
+//     var sample = document.getElementById("sample");
+// sample.play();
+
 var saveToGallery = function () {
   charDataArr.push(charData);
   localStorage.setItem("charDataArr", JSON.stringify(charDataArr));
@@ -136,13 +140,13 @@ $(".deleteBtn").on("click", function () {
   modal.classList.remove("is-active");
 });
 
-$("#soundClipButton").on("click", function (play) {
-  function play() {
-    var audio = new Audio("/im-mr.mp3");
-    audio.play();
-    console.log(audio.play());
-  }
-});
+// $("#soundClipButton").on("click", function (play) {
+//   function play() {
+//     var audio = new Audio("/yes-maam.mp3");
+//     audio.play();
+//     console.log(audio.play());
+//   }
+// });
 
 $("#galleryButton").on("click", function () {
   loadFromGallery();
