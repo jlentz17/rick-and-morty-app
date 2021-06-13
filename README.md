@@ -11,22 +11,21 @@ In the seventh week of bootcamp, we were given the assignment of creating a proj
 
 ## User Story
 
-User Story:
-AS A Rick and Morty fan
-I WANT to randomly generate a character with a picture and a quote and include a sound button 
-SO THAT I can create a gallery of favorite character pictures and quotes.
+AS A Rick and Morty fan<br>
+I WANT to randomly generate a character with a picture and a quote and include a sound button <br>
+SO THAT I can create a gallery of favorite character pictures and quotes.<br>
 
 ## Acceptance Criteria
 
-GIVEN I am searching for Rick and Morty info
-WHEN I press the Search button
-THEN I am presented with a random character card with name, origin, species, and a picture and asked to save or next
-WHEN I press the save button
-THEN the character card is saved into local storage for the Gallery
-WHEN I press the cancel button
-THEN it exits the modal
-WHEN I press the Gallery button
-Then the gallery of stored character cards is shown with the cards side by side
+GIVEN I am searching for Rick and Morty info<br>
+WHEN I press the Search button<br>
+THEN I am presented with a random character card with name, origin, species, and a picture and asked to save or next<br>
+WHEN I press the save button<br>
+THEN the character card is saved into local storage for the Gallery<br>
+WHEN I press the cancel button<br>
+THEN it exits the modal<br>
+WHEN I press the Gallery button<br>
+Then the gallery of stored character cards is shown with the cards side by side<br>
 
 ## Built With
 
