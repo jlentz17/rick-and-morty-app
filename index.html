@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'>
     </script>
 
 
-<title>Get Schwifty!</title>
+    <title>Get Schwifty!</title>
 </head>
 
 <body></body>
-    <div class="buttons are-large">
-        <button class=" firstBtn button is-success is-hover is rounded social_item neonBtn" id="characterButton">Get Schwifty!</button>
+<div class="buttons">
+    <button class="firstBtn button is-success is-size-2 is-hover is rounded social_item neonBtn"
+        id="characterButton">Get Schwifty!</button>
 
-        <button class="button is-danger is-full-width" id="galleryButton">Gallery of Ricks</button>
+    <button class="secondButton button is-danger is-size-2 is-full-width" id="galleryButton">Gallery of Ricks</button>
 
-        <button class="button is-primary" id="soundClipButton" onclick="play()">
-            OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
-            <!-- <input type="button" class= "button is-hover is-medium" value="PLAY" onclick="play"> -->
+    <button class=" thirdButton button is-primary is-size-2" id="soundClipButton" onclick="play()">
+        OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
 
-            <audio id="audio" src="./im-mr.mp3">
-                <p>If you are reading this, it is because your browser does not support the audio element.</p>
-            </audio>
-    </div>
-    
-    <div class="container">
+        <audio id="audio" src="./im-mr.mp3">
+            <p>If you are reading this, it is because your browser does not support the audio element.</p>
+        </audio>
+</div>
+
+<div class="container">
     <div class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
@@ -42,27 +42,32 @@
             <section class="modal-card-body">
                 <!-- Content ... -->
                 <div class="col-12 col-md-8">
-                    <h2 class="characterName"></h2>
-                    <h2 class="characterSpecies"></h2>
-                    <h2 class="characterOrigin"></h2>
-                    <img class="characterImage">
+                    <h2 class=" col-3 characterName"></h2>
+                    <h2 class="col-3 characterSpecies"></h2>
+                    <h2 class="col-3 characterOrigin"></h2>
+                    <img class=" col-3 characterImage">
                 </div>
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success" id="saveRicks">Save If You Think This Guy Gets It</button>
-                <button class="button">Look Who's Purging Now</button>
+                <button class="button" id="deleteRicks">Look Who's Purging Now</button>
             </footer>
         </div>
-            
-        </div>
-    <section class="container">
-        <h2 class= "savedCharacterName"></h2>
-        <h2 class= "savedCharacterSpecies"></h2>
-        <h2 class= "savedCharacterOrigin"></h2>
-        <span><img class="savedCharacterImage"></span>
-    </section>
 
-        </div>
+    </div class="row">
+    <section class="container">
+        <span class="col-3">
+            <h2 class="savedCharacterName"></h2>
+        </span>
+        <span class="col-3">
+            <h2 class="savedCharacterSpecies"></h2>
+        </span>
+        <span class="col-3">
+            <h2 class="savedCharacterOrigin"></h2>
+            <img class="savedCharacterImage">
+        </span>
+    </section>
+</div>
 
 </body>
 <script src="./js/script.js"></script>

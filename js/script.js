@@ -1,5 +1,6 @@
 var modal = document.querySelector(".modal");
 var modalTwo = document.querySelector(".modalTwo");
+var modalBg = document.querySelector(".modal-background")
 
 var deleteBtn = document.querySelector(".deleteBtn");
 var endPoint = `https://rickandmortyapi.com/api/character`;
@@ -11,6 +12,7 @@ var modalCardBody = document.querySelector(".modal-card-body");
 var charData = {};
 var charDataArr = [];
 var savedData = [];
+var characterButton = document.querySelector("#characterButton")
 
 var body = document.body;
 //generates a random integer between specified minimum and maximum
@@ -66,6 +68,10 @@ function play() {
   audio.play();
 }
 
+// function play() {
+//     var sample = document.getElementById("sample");
+// sample.play();
+
 var saveToGallery = function () {
   charDataArr.push(charData);
   localStorage.setItem("charDataArr", JSON.stringify(charDataArr));
@@ -113,7 +119,8 @@ var loadFromGallery = function () {
 };
 
 $("#saveRicks").on("click", function () {
-  saveToGallery();
+    modal.classList.remove("is-active")
+    saveToGallery();
 });
 
 //Get Schwifty button click function to show random character and traits/picture
@@ -124,19 +131,27 @@ $("#characterButton").on("click", function () {
   modal.classList.add("is-active");
 });
 
+modalBg.addEventListener("click", function () {
+    modal.classList.remove("is-active")    
+})
+
 // don't know how to do this- nevermind!!!
 $(".deleteBtn").on("click", function () {
   modal.classList.remove("is-active");
 });
 
-$("#soundClipButton").on("click", function (play) {
-  function play() {
-    var audio = new Audio("/im-mr.mp3");
-    audio.play();
-    console.log(audio.play());
-  }
-});
+// $("#soundClipButton").on("click", function (play) {
+//   function play() {
+//     var audio = new Audio("/yes-maam.mp3");
+//     audio.play();
+//     console.log(audio.play());
+//   }
+// });
 
 $("#galleryButton").on("click", function () {
   loadFromGallery();
 });
+
+$("#deleteRicks").on("click", function () {
+    modal.classList.remove("is-active")
+})
