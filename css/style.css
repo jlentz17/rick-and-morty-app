@@ -4,17 +4,30 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 .container {
+  display: inline-block;
+  justify-content: space-evenly;
+ }
+
+/* .row {
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-around;
+} */
+
+/* .savedCharacterName {
+  display: flex;
+  float: left;
 }
 
+.savedCharacterSpecies {
+  display: flex;
+  float: center;
+} */
 
-.coolBeans {
+
+/* .coolBeans {
   border: 2px solid currentColor;
   border-radius: 3rem;
   color: yellow;
@@ -58,7 +71,7 @@ html {
     color indigo
     transform scale(1.05)
     will-change transform
-}
+} */
 
 .buttons {
   display: flex;
@@ -66,10 +79,10 @@ html {
   align-items: flex-start;
 }
 
-.savedCharacterName { 
+/* .savedCharacterName { 
   display: flex;
   flex-direction: row;
-}
+} */
 
 /* @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .buttons {
