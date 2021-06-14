@@ -71,6 +71,42 @@ function play() {
   audio.play();
 }
 
+//creates character card from local storage
+var loadCharacterCard = function(savedData, i) {
+        //create character card in Ricks gallery
+        var containerEl = document.createElement("section")
+        containerEl.classList.add("container")
+        containerEl.id = "gallery-" + i;
+    
+        body.appendChild(containerEl);
+  
+        //create h2 element for character name
+        var characterNameEl = document.createElement("h2")
+        characterNameEl.classList.add("savedCharacterName")
+        characterNameEl.textContent = savedData[i].name
+    
+        //create h2 element for character species
+        var characterSpeciesEl = document.createElement("h2")
+        characterSpeciesEl.classList.add("savedCharacterSpecies")
+        characterSpeciesEl.textContent = savedData[i].species
+    
+        //create h2 element for character origin
+        var characterOriginEl = document.createElement("h2")
+        characterOriginEl.classList.add("savedOriginEl")
+        characterOriginEl.textContent = savedData[i].origin.name
+    
+        //create image element for character picture
+        var characterImageEl = document.createElement("img")
+        characterImageEl.classList.add("savedCharacterImage")
+        characterImageEl.setAttribute("src", savedData[i].image)
+    
+        //append everything to section element
+        containerEl.appendChild(characterNameEl)
+        containerEl.appendChild(characterSpeciesEl)
+        containerEl.appendChild(characterOriginEl)
+        containerEl.appendChild(characterImageEl)
+}
+
 // saves chracter data to local storage
 var saveToGallery = function () {
   charDataArr.push(charData);
@@ -100,73 +136,17 @@ var loadFromGallery = function () {
     
     // if there is no previous galleries loaded with the same element id then create new elements
     if (!prevGallery) {
+      //create character card in gallery of ricks
+      loadCharacterCard(savedData, i);
+    } 
+    else {
 
-      //create character card in Ricks gallery
-      var containerEl = document.createElement("section")
-      containerEl.classList.add("container")
-      containerEl.id = "gallery-" + i;
-  
-      body.appendChild(containerEl);
-
-      //create h2 element for character name
-      var characterNameEl = document.createElement("h2")
-      characterNameEl.classList.add("savedCharacterName")
-      characterNameEl.textContent = savedData[i].name
-  
-      //create h2 element for character species
-      var characterSpeciesEl = document.createElement("h2")
-      characterSpeciesEl.classList.add("savedCharacterSpecies")
-      characterSpeciesEl.textContent = savedData[i].species
-  
-      //create h2 element for character origin
-      var characterOriginEl = document.createElement("h2")
-      characterOriginEl.classList.add("savedOriginEl")
-      characterOriginEl.textContent = savedData[i].origin.name
-  
-      //create image element for character picture
-      var characterImageEl = document.createElement("img")
-      characterImageEl.classList.add("savedCharacterImage")
-      characterImageEl.setAttribute("src", savedData[i].image)
-  
-      //append everything to section element
-      containerEl.appendChild(characterNameEl)
-      containerEl.appendChild(characterSpeciesEl)
-      containerEl.appendChild(characterOriginEl)
-      containerEl.appendChild(characterImageEl)
-    } else {
-      
       //if there is an element id that matches then remove it and replace it with the new one.
       prevGallery.remove();
 
       //create character card in Ricks gallery
-      var containerEl = document.createElement("section")
-      containerEl.classList.add("container")
-      containerEl.id = "gallery-" + i;
-  
-      body.appendChild(containerEl);
-  
-      var characterNameEl = document.createElement("h2")
-      characterNameEl.classList.add("savedCharacterName")
-      characterNameEl.textContent = savedData[i].name
-  
-      var characterSpeciesEl = document.createElement("h2")
-      characterSpeciesEl.classList.add("savedCharacterSpecies")
-      characterSpeciesEl.textContent = savedData[i].species
-  
-      var characterOriginEl = document.createElement("h2")
-      characterOriginEl.classList.add("savedOriginEl")
-      characterOriginEl.textContent = savedData[i].origin.name
-  
-      var characterImageEl = document.createElement("img")
-      characterImageEl.classList.add("savedCharacterImage")
-      characterImageEl.setAttribute("src", savedData[i].image)
-  
-      containerEl.appendChild(characterNameEl)
-      containerEl.appendChild(characterSpeciesEl)
-      containerEl.appendChild(characterOriginEl)
-      containerEl.appendChild(characterImageEl)
+      loadCharacterCard(savedData, i);
     }
-
   }
 };
 
