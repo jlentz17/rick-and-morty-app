@@ -13,12 +13,13 @@ var charData = {};
 var charDataArr = [];
 var savedData = [];
 var characterButton = document.querySelector("#characterButton")
-
 var body = document.body;
+
 //generates a random integer between specified minimum and maximum
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
+
 // Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
 var randomPage = getRandomInt(1, 34);
 fetch(endPoint + "?page=" + randomPage)
@@ -53,6 +54,7 @@ var createCharacterCard = function (input) {
   modalCardBody.appendChild(characterImage);
 };
 
+// creates character object to be stored in local storage
 var createCharDataObj = function (input) {
   var charDataObj = {
     name: input.name,
@@ -63,64 +65,114 @@ var createCharDataObj = function (input) {
   return charDataObj;
 };
 
+//function plays audio file when applied
 function play() {
   var audio = document.getElementById("audio");
   audio.play();
 }
 
-// function play() {
-//     var sample = document.getElementById("sample");
-// sample.play();
-
+// saves chracter data to local storage
 var saveToGallery = function () {
   charDataArr.push(charData);
   localStorage.setItem("charDataArr", JSON.stringify(charDataArr));
 };
 
+//loads character data from local storage
 var loadFromGallery = function () {
   savedData = localStorage.getItem("charDataArr");
+  
   // if there are no characters, set savedData to an empty array and return out of the function
   if (!savedData) {
     return false;
   }
+
 
   // parse into array of objects
   savedData = JSON.parse(savedData);
 
   // loop through savedData array
   for (var i = 0; i < savedData.length; i++) {
-    // pass each character object into the `createTaskEl()` function
-    var containerEl = document.createElement("section")
-    containerEl.classList.add("container")
+    //set id counter to iterate for each section element id that is created
+    var idCounter = i;
 
-    body.appendChild(containerEl);
+    //load any previous section elements that have been created with the same id
+    var prevGallery = document.getElementById("gallery-" + i);
+    
+    // if there is no previous galleries loaded with the same element id then create new elements
+    if (!prevGallery) {
 
-    var characterNameEl = document.createElement("h2")
-    characterNameEl.classList.add("savedCharacterName")
-    characterNameEl.textContent = savedData[i].name
+      //create character card in Ricks gallery
+      var containerEl = document.createElement("section")
+      containerEl.classList.add("container")
+      containerEl.id = "gallery-" + i;
+  
+      body.appendChild(containerEl);
 
-    var characterSpeciesEl = document.createElement("h2")
-    characterSpeciesEl.classList.add("savedCharacterSpecies")
-    characterSpeciesEl.textContent = savedData[i].species
+      //create h2 element for character name
+      var characterNameEl = document.createElement("h2")
+      characterNameEl.classList.add("savedCharacterName")
+      characterNameEl.textContent = savedData[i].name
+  
+      //create h2 element for character species
+      var characterSpeciesEl = document.createElement("h2")
+      characterSpeciesEl.classList.add("savedCharacterSpecies")
+      characterSpeciesEl.textContent = savedData[i].species
+  
+      //create h2 element for character origin
+      var characterOriginEl = document.createElement("h2")
+      characterOriginEl.classList.add("savedOriginEl")
+      characterOriginEl.textContent = savedData[i].origin.name
+  
+      //create image element for character picture
+      var characterImageEl = document.createElement("img")
+      characterImageEl.classList.add("savedCharacterImage")
+      characterImageEl.setAttribute("src", savedData[i].image)
+  
+      //append everything to section element
+      containerEl.appendChild(characterNameEl)
+      containerEl.appendChild(characterSpeciesEl)
+      containerEl.appendChild(characterOriginEl)
+      containerEl.appendChild(characterImageEl)
+    } else {
+      
+      //if there is an element id that matches then remove it and replace it with the new one.
+      prevGallery.remove();
 
-    var characterOriginEl = document.createElement("h2")
-    characterOriginEl.classList.add("savedOriginEl")
-    characterOriginEl.textContent = savedData[i].origin.name
+      //create character card in Ricks gallery
+      var containerEl = document.createElement("section")
+      containerEl.classList.add("container")
+      containerEl.id = "gallery-" + i;
+  
+      body.appendChild(containerEl);
+  
+      var characterNameEl = document.createElement("h2")
+      characterNameEl.classList.add("savedCharacterName")
+      characterNameEl.textContent = savedData[i].name
+  
+      var characterSpeciesEl = document.createElement("h2")
+      characterSpeciesEl.classList.add("savedCharacterSpecies")
+      characterSpeciesEl.textContent = savedData[i].species
+  
+      var characterOriginEl = document.createElement("h2")
+      characterOriginEl.classList.add("savedOriginEl")
+      characterOriginEl.textContent = savedData[i].origin.name
+  
+      var characterImageEl = document.createElement("img")
+      characterImageEl.classList.add("savedCharacterImage")
+      characterImageEl.setAttribute("src", savedData[i].image)
+  
+      containerEl.appendChild(characterNameEl)
+      containerEl.appendChild(characterSpeciesEl)
+      containerEl.appendChild(characterOriginEl)
+      containerEl.appendChild(characterImageEl)
+    }
 
-    var characterImageEl = document.createElement("img")
-    characterImageEl.classList.add("savedCharacterImage")
-    characterImageEl.setAttribute("src", savedData[i].image)
-
-    containerEl.appendChild(characterNameEl)
-    containerEl.appendChild(characterSpeciesEl)
-    containerEl.appendChild(characterOriginEl)
-    containerEl.appendChild(characterImageEl)
   }
 };
 
 $("#saveRicks").on("click", function () {
-    modal.classList.remove("is-active")
-    saveToGallery();
+  modal.classList.remove("is-active")
+  saveToGallery();
 });
 
 //Get Schwifty button click function to show random character and traits/picture
@@ -132,7 +184,7 @@ $("#characterButton").on("click", function () {
 });
 
 modalBg.addEventListener("click", function () {
-    modal.classList.remove("is-active")    
+  modal.classList.remove("is-active")
 })
 
 // don't know how to do this- nevermind!!!
@@ -153,5 +205,5 @@ $("#galleryButton").on("click", function () {
 });
 
 $("#deleteRicks").on("click", function () {
-    modal.classList.remove("is-active")
+  modal.classList.remove("is-active")
 })
