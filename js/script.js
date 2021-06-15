@@ -4,7 +4,7 @@ var modalBg = document.querySelector(".modal-background")
 
 var deleteBtn = document.querySelector(".deleteBtn");
 var endPoint = `https://rickandmortyapi.com/api/character`;
-var quoteApi = "./quotes.JSON"
+var quoteApi = "http://loremricksum.com/api/?paragraphs=1&quotes=1"
 var characterName = document.querySelector(".characterName");
 var characterSpecies = document.querySelector(".characterSpecies");
 var characterImage = document.querySelector(".characterImage");
@@ -21,18 +21,20 @@ var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-// Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
-fetch(quoteApi)
+//fetches API for random quotes
+var getRandomQuote = function() {
+  fetch(quoteApi)
   .then((response) => {
     return response.json();
   })
-  .then((data) => {
-    quoteMessage = data.results;
+  .then((results) => {
+    quoteMessage = results.data;
     console.log(quoteMessage);
   })
   .catch((error) => {
     console.log("rejected", error);
   });
+}
 
 // Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
 var randomPage = getRandomInt(1, 34);
@@ -175,6 +177,7 @@ $("#characterButton").on("click", function () {
   charData = createCharDataObj(character);
   createCharacterCard(character);
   modal.classList.add("is-active");
+  getRandomQuote();
 });
 
 modalBg.addEventListener("click", function () {
