@@ -16,6 +16,7 @@ var charDataArr = [];
 var savedData = [];
 var characterButton = document.querySelector("#characterButton")
 var body = document.body;
+var quoteMessage = "";
 
 //generates a random integer between specified minimum and maximum
 var getRandomInt = function (min, max) {
@@ -30,11 +31,12 @@ var getRandomQuote = function() {
   })
   .then((results) => {
     quoteMessage = results.data[0];
-    console.log(quoteMessage);
   })
   .catch((error) => {
     console.log("rejected", error);
   });
+
+  return quoteMessage;
 }
 
 //set quote container text content to display quote
