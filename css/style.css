@@ -30,7 +30,6 @@ html {
 
 }
 
-/* working on this */
 .modal {
     position: absolute;
     top: 10px;
@@ -43,14 +42,15 @@ html {
  }
  
 
- .firstBtn {
+ .firstBtn, .thirdButton {
   color: #fff;
   list-style: none;
   padding: 0;
   width: 450px;
 }
 
-.firstBtn:active {
+.firstBtn:active,
+.thirdButton:active {
   margin-top: 15px;
 }
 
@@ -69,5 +69,3 @@ html {
   box-shadow: 0px 0px 20px #dd22c4;
   color: #4221bb;
 }
-
-/* #sample { display: none } */
