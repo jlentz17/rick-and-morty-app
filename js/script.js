@@ -92,8 +92,8 @@ var loadCharacterCard = function(savedData, i) {
     
         //create h2 element for character origin
         var characterOriginEl = document.createElement("h2")
-        characterOriginEl.classList.add("savedOriginEl")
-        characterOriginEl.textContent = savedData[i].origin.name
+        characterOriginEl.classList.add("savedCharacterOrigin")
+        characterOriginEl.textContent = savedData[i].origin;
     
         //create image element for character picture
         var characterImageEl = document.createElement("img")
