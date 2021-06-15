@@ -183,13 +183,12 @@ $("#characterButton").on("click", function () {
   var character = randomCharacterSelector();
   charData = createCharDataObj(character);
   createCharacterCard(character);
-  modal.classList.add("is-active");
-  getRandomQuote();
+  modal.classList.add("is-active")
 });
 
 //Get quotes button function calls getRandomQuote function and generates onto textarea
 $("#quotesButton").on("click", function () {
-  var quoteMessage = getRandomQuote();
+  quoteMessage = getRandomQuote();
   setQuoteEl(quoteMessage);
 })
 
