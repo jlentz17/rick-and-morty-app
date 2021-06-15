@@ -17,14 +17,17 @@
 </head>
 
 <body>
-    <div class="buttons">
-        <button class="firstBtn button is-success is-size-2 is-hover is rounded social_item neonBtn"
+    <div class="buttons columns">
+        <button class=" column firstBtn button is-success is-size-3 is-hover is-rounded social_item neonBtn"
             id="characterButton">Get Schwifty!</button>
 
-        <button class="secondButton button is-danger is-size-2 is-full-width" id="galleryButton">Gallery of
-            Ricks</button>
+        <button class=" column secondButton button is-danger is-size-3 is-full-width" id="galleryButton">Gallery of Ricks</button>
 
-        <button class=" thirdButton button is-primary is-size-2" id="soundClipButton" onclick="play()">
+        <button class="column secondBtn button is-primary is size-3 is-hover is-rounded social_item neonBtn">
+            Some Quotes If Ya Want To Click Here
+        </button>    
+
+        <button class="column thirdButton button is-primary is-size-3" id="soundClipButton" onclick="play()">
             OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
 
             <audio id="audio" src="./im-mr.mp3">
@@ -53,6 +56,10 @@
                     <button class="button is-success" id="saveRicks">Save If You Think This Guy Gets It</button>
                     <button class="button" id="deleteRicks">Look Who's Purging Now</button>
                 </footer>
+            </div>
+
+            <div class="quotesSection">
+                <textarea class="textQuote"></textarea>
             </div>
 
             <div class="container">
