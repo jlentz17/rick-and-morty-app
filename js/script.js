@@ -4,22 +4,45 @@ var modalBg = document.querySelector(".modal-background")
 
 var deleteBtn = document.querySelector(".deleteBtn");
 var endPoint = `https://rickandmortyapi.com/api/character`;
+var quoteApi = "http://loremricksum.com/api/?paragraphs=1&quotes=1"
 var characterName = document.querySelector(".characterName");
 var characterSpecies = document.querySelector(".characterSpecies");
 var characterImage = document.querySelector(".characterImage");
 var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
+var quoteEl = document.querySelector(".textQuote");
 var charData = {};
 var charDataArr = [];
 var savedData = [];
 var characterButton = document.querySelector("#characterButton")
 var body = document.body;
+var quoteMessage = "";
 
 //generates a random integer between specified minimum and maximum
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+//fetches API for random quotes
+var getRandomQuote = function() {
+  fetch(quoteApi)
+  .then((response) => {
+    return response.json();
+  })
+  .then((results) => {
+    quoteMessage = results.data[0];
+  })
+  .catch((error) => {
+    console.log("rejected", error);
+  });
+
+  return quoteMessage;
+}
+
+//set quote container text content to display quote
+var setQuoteEl = function(quoteMessage) {
+  quoteEl.textContent = quoteMessage;
+}
 // Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
 var randomPage = getRandomInt(1, 34);
 fetch(endPoint + "?page=" + randomPage)
@@ -83,17 +106,17 @@ var loadCharacterCard = function(savedData, i) {
         //create h2 element for character name
         var characterNameEl = document.createElement("h2")
         characterNameEl.classList.add("savedCharacterName")
-        characterNameEl.textContent = savedData[i].name
+        characterNameEl.textContent = "Name: " + savedData[i].name
     
         //create h2 element for character species
         var characterSpeciesEl = document.createElement("h2")
         characterSpeciesEl.classList.add("savedCharacterSpecies")
-        characterSpeciesEl.textContent = savedData[i].species
+        characterSpeciesEl.textContent = "Species: " + savedData[i].species
     
         //create h2 element for character origin
         var characterOriginEl = document.createElement("h2")
         characterOriginEl.classList.add("savedCharacterOrigin")
-        characterOriginEl.textContent = savedData[i].origin;
+        characterOriginEl.textContent = "Origin: " + savedData[i].origin;
     
         //create image element for character picture
         var characterImageEl = document.createElement("img")
@@ -161,7 +184,14 @@ $("#characterButton").on("click", function () {
   charData = createCharDataObj(character);
   createCharacterCard(character);
   modal.classList.add("is-active");
+  getRandomQuote();
 });
+
+//Get quotes button function calls getRandomQuote function and generates onto textarea
+$("#quotesButton").on("click", function () {
+  var quoteMessage = getRandomQuote();
+  setQuoteEl(quoteMessage);
+})
 
 modalBg.addEventListener("click", function () {
   modal.classList.remove("is-active")
