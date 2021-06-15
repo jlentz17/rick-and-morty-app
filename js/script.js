@@ -4,6 +4,7 @@ var modalBg = document.querySelector(".modal-background")
 
 var deleteBtn = document.querySelector(".deleteBtn");
 var endPoint = `https://rickandmortyapi.com/api/character`;
+var quoteApi = "./quotes.JSON"
 var characterName = document.querySelector(".characterName");
 var characterSpecies = document.querySelector(".characterSpecies");
 var characterImage = document.querySelector(".characterImage");
@@ -19,6 +20,19 @@ var body = document.body;
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
+
+// Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
+fetch(quoteApi)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    quoteMessage = data.results;
+    console.log(quoteMessage);
+  })
+  .catch((error) => {
+    console.log("rejected", error);
+  });
 
 // Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
 var randomPage = getRandomInt(1, 34);
@@ -83,17 +97,17 @@ var loadCharacterCard = function(savedData, i) {
         //create h2 element for character name
         var characterNameEl = document.createElement("h2")
         characterNameEl.classList.add("savedCharacterName")
-        characterNameEl.textContent = savedData[i].name
+        characterNameEl.textContent = "Name: " + savedData[i].name
     
         //create h2 element for character species
         var characterSpeciesEl = document.createElement("h2")
         characterSpeciesEl.classList.add("savedCharacterSpecies")
-        characterSpeciesEl.textContent = savedData[i].species
+        characterSpeciesEl.textContent = "Species: " + savedData[i].species
     
         //create h2 element for character origin
         var characterOriginEl = document.createElement("h2")
         characterOriginEl.classList.add("savedCharacterOrigin")
-        characterOriginEl.textContent = savedData[i].origin;
+        characterOriginEl.textContent = "Origin: " + savedData[i].origin;
     
         //create image element for character picture
         var characterImageEl = document.createElement("img")
