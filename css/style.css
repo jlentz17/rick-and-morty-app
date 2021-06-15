@@ -4,90 +4,29 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 .container {
-  display: flex;
-  /* justify-content: space-between; */
+  display: inline-block;
+  justify-content: space-around;
+ }
+
+.column {
+  display: inline-block;
 }
 
-
-.coolBeans {
-  border: 2px solid currentColor;
-  border-radius: 3rem;
-  color: yellow;
-  font-family: roboto;
-  font-size: 4rem;
-  font-weight: 100;
-  overflow: hidden;
-  padding: 1rem 2rem;
-  position: relative;
-  text-decoration: none;
-  transition: .2s; 
-  transform: ease-in-out;
-  will-change: transform;
-  z-index: 0;
-
-  
-  .coolBeans::after {
-    background-color: yellow;
-    border-radius: 3rem;
-    content: '';
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(-100%, 0) rotate(10deg);
-    transform-origin: top left;
-    transition: .2s;
-    transform: ease-out;
-    will-change: transform;
-    z-index: -1;
-  }
-    
-  .coolBeans hover::after 
-    transform: translate(0, 0)
-  
-
-  &:hover 
-    border 2px solid transparent
-    color indigo
-    transform scale(1.05)
-    will-change transform
-}
+ .savedCharacterName, .savedCharacterSpecies, .savedCharacterImage, .savedCharacterOrigin {
+   color: rgb(9, 67, 226);
+   text-align: center;
+   font-size: large;
+   font-weight: 900;
+   margin-left: 40px;
+ }
 
 .buttons {
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
-.savedCharacterName { 
-  display: flex;
-  flex-direction: row;
-}
-
-/* @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-} */
-
-/* .container {
-  border: 2px solid black;
-} */
-
-
-/* #characterButton {
-    flex-direction: column;
-    align-items: center;
-} */
 
 /* working on this */
 .modal {

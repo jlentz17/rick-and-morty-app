@@ -16,58 +16,57 @@
     <title>Get Schwifty!</title>
 </head>
 
-<body></body>
-<div class="buttons">
-    <button class="firstBtn button is-success is-size-2 is-hover is rounded social_item neonBtn"
-        id="characterButton">Get Schwifty!</button>
+<body>
+    <div class="buttons">
+        <button class="firstBtn button is-success is-size-2 is-hover is rounded social_item neonBtn"
+            id="characterButton">Get Schwifty!</button>
 
-    <button class="secondButton button is-danger is-size-2 is-full-width" id="galleryButton">Gallery of Ricks</button>
+        <button class="secondButton button is-danger is-size-2 is-full-width" id="galleryButton">Gallery of
+            Ricks</button>
 
-    <button class=" thirdButton button is-primary is-size-2" id="soundClipButton" onclick="play()">
-        OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
+        <button class=" thirdButton button is-primary is-size-2" id="soundClipButton" onclick="play()">
+            OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
 
-        <audio id="audio" src="./im-mr.mp3">
-            <p>If you are reading this, it is because your browser does not support the audio element.</p>
-        </audio>
-</div>
+            <audio id="audio" src="./im-mr.mp3">
+                <p>If you are reading this, it is because your browser does not support the audio element.</p>
+            </audio>
+    </div>
 
-<div class="container">
-    <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Character</p>
-                <button class=" button deleteBtn" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <!-- Content ... -->
-                <div class="col-12 col-md-8">
-                    <h2 class=" col-3 characterName"></h2>
-                    <h2 class="col-3 characterSpecies"></h2>
-                    <h2 class="col-3 characterOrigin"></h2>
-                    <img class=" col-3 characterImage">
+    <div class="container">
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Character</p>
+                    <button class=" button deleteBtn" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <!-- Content ... -->
+                    <div class="col-12 col-md-8">
+                        <h2 class=" col-3 characterName"></h2>
+                        <h2 class="col-3 characterSpecies"></h2>
+                        <h2 class="col-3 characterOrigin"></h2>
+                        <img class=" col-3 characterImage">
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success" id="saveRicks">Save If You Think This Guy Gets It</button>
+                    <button class="button" id="deleteRicks">Look Who's Purging Now</button>
+                </footer>
+            </div>
+
+            <div class="container">
+                <div class="column"><h2 class="savedCharacterName">
+                </h2>
+                </div><br>
+                <div class="column"><h2 class="savedCharacterSpecies">
+                </h2>
                 </div>
-            </section>
-            <footer class="modal-card-foot">
-                <button class="button is-success" id="saveRicks">Save If You Think This Guy Gets It</button>
-                <button class="button" id="deleteRicks">Look Who's Purging Now</button>
-            </footer>
-        </div>
-
-    </div class="row">
-    <section class="container">
-        <span class="col-3">
-            <h2 class="savedCharacterName"></h2>
-        </span>
-        <span class="col-3">
-            <h2 class="savedCharacterSpecies"></h2>
-        </span>
-        <span class="col-3">
-            <h2 class="savedCharacterOrigin"></h2>
-            <img class="savedCharacterImage">
-        </span>
-    </section>
-</div>
+                <div class="column"><h2 class="savedCharacterOrigin"></h2>
+                </div>
+                <div class="column"><h2><img class="savedCharacterImage"></h2>
+                </div>
+            </div>
 
 </body>
 <script src="./js/script.js"></script>
