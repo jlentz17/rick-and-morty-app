@@ -10,6 +10,7 @@ var characterSpecies = document.querySelector(".characterSpecies");
 var characterImage = document.querySelector(".characterImage");
 var characterOrigin = document.querySelector(".characterOrigin");
 var modalCardBody = document.querySelector(".modal-card-body");
+var quoteEl = document.querySelector(".textQuote");
 var charData = {};
 var charDataArr = [];
 var savedData = [];
@@ -28,7 +29,7 @@ var getRandomQuote = function() {
     return response.json();
   })
   .then((results) => {
-    quoteMessage = results.data;
+    quoteMessage = results.data[0];
     console.log(quoteMessage);
   })
   .catch((error) => {
@@ -36,6 +37,10 @@ var getRandomQuote = function() {
   });
 }
 
+//set quote container text content to display quote
+var setQuoteEl = function(quoteMessage) {
+  quoteEl.textContent = quoteMessage;
+}
 // Fetches API data for each character and is stored in characterObj when called in the randomCharacterSelector
 var randomPage = getRandomInt(1, 34);
 fetch(endPoint + "?page=" + randomPage)
@@ -179,6 +184,12 @@ $("#characterButton").on("click", function () {
   modal.classList.add("is-active");
   getRandomQuote();
 });
+
+//Get quotes button function calls getRandomQuote function and generates onto textarea
+$("#quotesButton").on("click", function () {
+  var quoteMessage = getRandomQuote();
+  setQuoteEl(quoteMessage);
+})
 
 modalBg.addEventListener("click", function () {
   modal.classList.remove("is-active")
