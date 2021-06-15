@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Meta Data -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,7 @@
 </head>
 
 <!-- Buttons using Bulma classes and classes to add extra styling -->
+
 <body>
     <div class="buttons columns">
         <button class="column firstBtn button is-success is-size-3 is-hover is-rounded social_item neonBtn"
@@ -25,11 +27,11 @@
         <button class="column secondButton button is-danger is-size-3 is-full-width" id="galleryButton">Gallery of
             Ricks</button>
 
-        <button class="column thirdButton button is-primary is-large is-hover is-rounded social_item neonBtn">
-           DANGER DO NOT PUSH THIS BUTTON
+        <button class="column thirdButton button is-link is-size-3 is-full-width is-hover is-rounded social_item neonBtn">
+            DANGER DO NOT PUSH THIS IF YOU"RE OFFENDED EASILY
         </button>
 
-        <button class="column fourhButton button is-primary is-size-3" id="soundClipButton" onclick="play()">
+        <button class="column fourthButton button is-primary is-size-3" id="soundClipButton" onclick="play()">
             OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
 
             <!-- Add Audio to the Look At Me Button through JS as well -->
@@ -37,6 +39,13 @@
                 <p>If you are reading this, it is because your browser does not support the audio element.</p>
             </audio>
     </div>
+
+    <!-- section that displays quotes -->
+    <section class="quoteSection">
+        <div class="quoteContainer">
+            <p class="textQuote"></p>
+        </div>
+    </section>
 
     <!-- created modal for Character info -->
     <div class="container">
@@ -60,10 +69,6 @@
                     <button class="button is-success" id="saveRicks">Save If You Think This Guy Gets It</button>
                     <button class="button" id="deleteRicks">Look Who's Purging Now</button>
                 </footer>
-            </div>
-            <!-- section that displays quotes -->
-            <div class="quotesSection">
-                <textarea class="textQuote"></textarea>
             </div>
 
 </body>

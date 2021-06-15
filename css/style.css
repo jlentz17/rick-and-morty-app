@@ -26,8 +26,12 @@ html {
  }
 
 .buttons {
+  display: flex;
   align-items: center;
-
+  color: #fff;
+  list-style: none;
+  padding: 0;
+  width: 450px;
 }
 
 .modal {
@@ -42,11 +46,7 @@ html {
  }
  
 
- .firstBtn, .thirdButton {
-  color: #fff;
-  list-style: none;
-  padding: 0;
-  width: 450px;
+ .buttons {
 }
 
 .firstBtn:active,
