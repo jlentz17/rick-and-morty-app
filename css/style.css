@@ -11,11 +11,19 @@ html {
   justify-content: space-around;
  }
 
-.column {
+ .textQuote {
+   background-color: white;
+   color: teal;
+   font-weight: 600;
+   font-size: 3rem;
+   margin-top: 5rem;
+   margin-bottom: 2rem;
+ }
+/* .column {
   display: inline-block;
-}
+} */
 
- .savedCharacterName, .savedCharacterSpecies, .savedCharacterImage, .savedCharacterOrigin {
+ .savedCharacterName, .savedCharacterSpecies, .savedCharacterOrigin, .savedCharacterImage {
    color: rgb(9, 67, 226);
    text-align: center;
    font-size: large;
@@ -25,8 +33,7 @@ html {
    background-color: gray;
  }
 
-.buttons {
-  display: flex;
+.columns {
   align-items: center;
   color: #fff;
   list-style: none;
@@ -44,15 +51,6 @@ html {
     overflow: auto;
     overflow-y: auto;
  }
- 
-
- .buttons {
-}
-
-.firstBtn:active,
-.thirdButton:active {
-  margin-top: 15px;
-}
 
 .social__item {
   width: 60px;
