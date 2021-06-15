@@ -13,7 +13,7 @@ In the seventh week of bootcamp, we were given the assignment of creating a proj
 
 AS A Rick and Morty fan<br>
 I WANT to randomly generate a character with a picture and a quote and include a sound button <br>
-SO THAT I can create a gallery of favorite character pictures and quotes.<br>
+SO THAT I can create quotes, a gallery of favorite character pictures, and a character soundooard.<br>
 
 ## Acceptance Criteria
 
@@ -25,7 +25,11 @@ THEN the character card is saved into local storage for the Gallery<br>
 WHEN I press the cancel button<br>
 THEN it exits the modal<br>
 WHEN I press the Gallery button<br>
-Then the gallery of stored character cards is shown with the cards side by side<br>
+THEN the gallery of stored character cards is shown with the cards side by side<br>
+WHEN I press the Quotes button<br>
+THEN I am presented with a random Rick and Morty quote<br>
+WHEN I press the sound board button<br>
+THEN I am presented with a mp3 sound from a specific Rick and Morty character<br>
 
 ## Built With
 
