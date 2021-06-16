@@ -12,8 +12,8 @@ html {
  }
 
  .textQuote {
-   background-color: white;
-   color: teal;
+   background-color: orange;
+   color: white;
    font-weight: 600;
    font-size: 3rem;
    margin-top: 5rem;
@@ -33,13 +33,20 @@ html {
    background-color: gray;
  }
 
-.columns {
+.column {
   align-items: center;
   color: #fff;
   list-style: none;
   padding: 0;
   width: 450px;
 }
+
+.fourthButton {
+  margin-top: 10rem;
+}
+
+
+
 
 .modal {
     position: absolute;

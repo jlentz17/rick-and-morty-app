@@ -6,32 +6,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="rickAndMorty Icon" href="./css/rickAndMorty.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'>
     </script>
-    
+
     <title>Get Schwifty!</title>
 </head>
 
 <!-- Buttons using Bulma classes and classes to add extra styling -->
 
 <body>
-    <div class="buttons columns">
+    <div class="buttons columns" id="columns">
         <button class="column firstBtn button is-success is-size-3 is-hover is-rounded social_item neonBtn"
             id="characterButton">Get Schwifty!</button>
 
-        <button class="column secondButton button is-rounded is-danger is-size-3 is-full-width" id="galleryButton">Gallery of
+        <button class="column secondButton button is-rounded is-danger is-size-3 is-full-width"
+            id="galleryButton">Gallery of
             Ricks</button>
 
-        <button class="column thirdButton button is-link is-size-3 is-full-width is-hover is-rounded social_item neonBtn" id="quotesButton">
-            DANGER DO NOT PUSH THIS IF YOU'RE OFFENDED EASILY
+        <button
+            class="column thirdButton button is-link is-size-3 is-full-width is-hover is-rounded social_item neonBtn"
+            id="quotesButton">
+            DANGER DO NOT PUSH THIS
         </button>
 
-        <button class="column fourthButton button is-rounded is-primary is-size-3" id="soundClipButton" onclick="play()">
-            OOOOOO WEEEEEE LOOOOOK ATTT MEEEEE!
+        <button class="column fourthButton button is-rounded is-primary is-size-3" id="soundClipButton"
+            onclick="play()">
+            LOOOOOK ATTT MEEEEE!
 
             <!-- Add Audio to the Look At Me Button through JS as well -->
             <audio id="audio" src="./im-mr.mp3">
@@ -58,10 +63,10 @@
                 <section class="modal-card-body">
                     <!-- Content ... -->
                     <div class="col-12 col-md-8">
-                        <h2 class=" col-3 characterName"></h2>
+                        <h2 class="col-3 characterName"></h2>
                         <h2 class="col-3 characterSpecies"></h2>
                         <h2 class="col-3 characterOrigin"></h2>
-                        <img class=" col-3 characterImage">
+                        <img class="col-3 characterImage">
                     </div>
                 </section>
                 <footer class="modal-card-foot">
