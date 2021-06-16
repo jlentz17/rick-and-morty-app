@@ -99,7 +99,7 @@ var loadCharacterCard = function(savedData, i) {
         //create character card in Ricks gallery
         var containerEl = document.createElement("section")
         containerEl.classList.add("container")
-        containerEl.id = "gallery" + i;
+        containerEl.id = "gallery-" + i;
     
         body.appendChild(containerEl);
   
