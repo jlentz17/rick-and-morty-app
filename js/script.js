@@ -31,6 +31,7 @@ var getRandomQuote = function() {
   })
   .then((results) => {
     quoteMessage = results.data[0];
+    console.log(quoteMessage)
   })
   .catch((error) => {
     console.log("rejected", error);
