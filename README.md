@@ -2,18 +2,24 @@
 
 [For deployed version, click me!!!](https://jlentz17.github.io/rick-and-morty-app/)
 
-In the seventh week of bootcamp, we were given the assignment of creating a project with JavaScript and WEb API's.
+On the seventh week of bootcamp, we were given the assignment of creating a project with JavaScript and WEb API's.
 
 
 ![Image of Rick and Morty App](./css/rickAndMortyProjectScreenshot.png)
+![Image of Character Card](./css/rickAndMortyProjectScreenshot2.png)
+![Image of Gallery of Cards](./css/rickAndMortyProjectScreenshot3.png)
+![Image of displayed quote](./css/rickAndMortyProjectScreenshot4.png)
 
 # Description 
 
 ## User Story
 
 AS A Rick and Morty fan<br>
-I WANT to randomly generate a character with a picture and a quote and include a sound button <br>
-SO THAT I can create quotes, a gallery of favorite character pictures, and a character soundooard.<br>
+I WANT to randomly generate a character card with its name, species, origin, and a picture<br>
+SO THAT I can create a gallery of my favorite characters that are stored on the app<br>
+I WANT to click a button that will display a random rick and morty quote<br>
+SO THAT I can share it with my friends<br>
+
 
 ## Acceptance Criteria
 
