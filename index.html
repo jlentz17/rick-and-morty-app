@@ -20,61 +20,64 @@
 <!-- Buttons using Bulma classes and classes to add extra styling -->
 
 <body>
-    <div class="buttons columns" id="columns">
-        <button class="column firstBtn button is-success is-size-3 is-hover is-rounded social_item neonBtn"
-            id="characterButton">Get Schwifty!</button>
-
-        <button class="column secondButton button is-rounded is-danger is-size-3 is-full-width"
-            id="galleryButton">Gallery of
-            Ricks</button>
-
-        <button
-            class="column thirdButton button is-link is-size-3 is-full-width is-hover is-rounded social_item neonBtn"
-            id="quotesButton">
-            DANGER DO NOT PUSH THIS
-        </button>
-
-        <button class="column fourthButton button is-rounded is-primary is-size-3" id="soundClipButton"
-            onclick="play()">
-            LOOOOOK ATTT MEEEEE!
-
-            <!-- Add Audio to the Look At Me Button through JS as well -->
-            <audio id="audio" src="./im-mr.mp3">
-                <p>If you are reading this, it is because your browser does not support the audio element.</p>
-            </audio>
-    </div>
-
-    <!-- section that displays quotes -->
-    <section class="quoteSection">
-        <div class="quoteContainer">
-            <p class="textQuote"></p>
-        </div>
-    </section>
-
-    <!-- created modal for Character info -->
     <div class="container">
-        <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Character</p>
-                    <button class=" button deleteBtn" aria-label="close"></button>
-                </header>
-                <section class="modal-card-body">
-                    <!-- Content ... -->
-                    <div class="col-12 col-md-8">
-                        <h2 class="col-3 characterName"></h2>
-                        <h2 class="col-3 characterSpecies"></h2>
-                        <h2 class="col-3 characterOrigin"></h2>
-                        <img class="col-3 characterImage">
-                    </div>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button is-success" id="saveRicks">Save If You Think This Guy Gets It</button>
-                    <button class="button" id="deleteRicks">Look Who's Purging Now</button>
-                </footer>
-            </div>
+        <div class="buttons columns" id="columns">
+            <button class="column firstBtn button is-success is-size-4 is-hover is-rounded social_item neonBtn"
+                id="characterButton">Get Schwifty!</button>
 
+            <button class="column secondBtn button is-rounded is-danger is-size-4 is-full-width"
+                id="galleryButton">Gallery of
+                Ricks</button>
+
+            <button
+                class="column thirdBtn button is-link is-size-4 is-full-width is-hover is-rounded social_item neonBtn"
+                id="quotesButton">
+                DANGER DO NOT PUSH THIS
+            </button>
+
+            <button class="column fourthBtn button is-rounded is-primary is-size-4" id="soundClipButton"
+                onclick="play()">
+                LOOOOOK ATTT MEEEEE!
+
+                <!-- Add Audio to the Look At Me Button through JS as well -->
+                <audio id="audio" src="./im-mr.mp3">
+                    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+                </audio>
+        </div>
+
+        <!-- section that displays quotes -->
+        <section class="quoteSection">
+            <div class="quoteContainer">
+                <p class="textQuote"></p>
+            </div>
+        </section>
+
+        <!-- created modal for Character info -->
+
+        <div class="modal">
+            <div class="modal-background">
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Character</p>
+                        <button class=" button deleteBtn" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <!-- Content ... -->
+                        <div class="col-12 col-md-8">
+                            <h2 class="col-3 characterName"></h2>
+                            <h2 class="col-3 characterSpecies"></h2>
+                            <h2 class="col-3 characterOrigin"></h2>
+                            <img class="col-3 characterImage">
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-success" id="saveRicks">Save If You Think This Guy Gets It</button>
+                        <button class="button" id="deleteRicks">Look Who's Purging Now</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./js/script.js"></script>
 

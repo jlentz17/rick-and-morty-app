@@ -4,11 +4,12 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
   display: inline-block;
-  justify-content: space-around;
  }
 
  .textQuote {
@@ -19,9 +20,6 @@ html {
    margin-top: 5rem;
    margin-bottom: 2rem;
  }
-/* .column {
-  display: inline-block;
-} */
 
  .savedCharacterName, .savedCharacterSpecies, .savedCharacterOrigin, .savedCharacterImage {
    color: rgb(9, 67, 226);
@@ -33,18 +31,11 @@ html {
    background-color: gray;
  }
 
-.column {
-  align-items: center;
-  color: #fff;
-  list-style: none;
-  padding: 0;
-  width: 450px;
-}
 
-.fourthButton {
-  margin-top: 10rem;
+.firstBtn, .secondBtn, .thirdBtn, .fourthBtn {
+  margin-top: 15rem;
+  margin-left: 3.2rem;
 }
-
 
 
 
